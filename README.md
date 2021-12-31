@@ -32,7 +32,7 @@ Usage: git add [file]
 This command adds a file to the staging area.
  
 Usage: git add *  
-This command adds one or more to the staging area.
+This command adds one or more to the staging areas.
 ```
 
 ```
