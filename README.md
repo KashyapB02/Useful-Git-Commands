@@ -1,220 +1,115 @@
 <h1 align="center">Git Commands</h1>
 
-<h5>
+<h4>1. Setup user name and user email</h4>
 
-```
-1. git config
+- User name  : `git config --global user.name "user name"`<br>
+- User email : `git config --global user.email "userEmailID"`
 
-Usage: git config –global user.name “[name]”  
-Usage: git config –global user.email “[email address]”
+<h2></h2>
 
-This command sets the author name and email address respectively to be used with your commits.
-```
- 
-```
-2. git init
+<h4>2. View user name and user email</h4>
 
-Usage: git init [repository name]
-This command is used to start a new repository.
-```
+- User name  : `git config --global user.name`<br>
+- User email : `git config --global user.email`
 
-```
-3. git clone
+<h2></h2>
 
-Usage: git clone [url]  
-This command is used to obtain a repository from an existing URL.
-```
+<h4>3. Cache login credentials (It helps to avoid re-typing the username and password everytime you perform a commit)</h4>
 
-```
-4. git add
+- `git config --global credential.helper cache`
 
-Usage: git add [file]  
-This command adds a file to the staging area.
- 
-Usage: git add *  
-This command adds one or more to the staging area.
-```
+<h2></h2>
 
-```
-5. git commit
+<h4>4. Obtain a repository from an existing URL</h4>
 
-Usage: git commit -m “[ Type in the commit message]”  
-This command records or snapshots the file permanently in the version history.
+- `git clone URLofRepository`
 
-Usage: git commit -a  
-This command commits any files you’ve added with the git add command and also commits any files you’ve changed since then.
-``` 
+<h2></h2>
 
-```
-6. git diff
+<h4>5. Initialize an empty git repository</h4>
 
-Usage: git diff  
-This command shows the file differences which are not yet staged.
- 
-Usage: git diff –staged 
-This command shows the differences between the files in the staging area and the latest version present.
+- Initialize git in existing folder : `git init`
+- Initialize git with new folder : `git init folderName`
 
-Usage: git diff [first branch] [second branch]  
-This command shows the differences between the two branches mentioned.
-```
+<h2></h2>
 
-```
-7. git reset
+<h4>6. Adding files to staging area</h4>
 
-Usage: git reset [file]  
-This command unstages the file, but it preserves the file contents.
+- Adding a single file : `git add fileName`
+- Adding all files : `git add .` 
 
-Usage: git reset [commit]  
-This command undoes all the commits after the specified commit and preserves the changes locally.
+<h2></h2>
 
-Usage: git reset –hard [commit]
-This command discards all history and goes back to the specified commit.
-```
+<h4>7. Check repository status</h4>
 
-```
-8. git status
+- `git status` 
 
-Usage: git status  
-This command lists all the files that have to be committed.
-``` 
+<h2></h2>
 
-```
-9. git rm
+<h4>8. Commit changes with commit message</h4>
 
-Usage: git rm [file]  
-This command deletes the file from your working directory and stages the deletion.
-```
+- Single line message : `git commit -m "Short summery about commit"`
+- Complete commit message : `git commit` 
 
-```
-10. git log
+<h2></h2>
 
-Usage: git log  
-This command is used to list the version history for the current branch.
+<h4>9. View commit history with changes</h4>
 
-Usage: git log –follow[file]  
-This command lists version history for a file, including the renaming of files also.
-```
+- List of newest commits : `git log`
+- Detailed changes of each file : `git log -p` 
 
-```
-11. git show
+<h2></h2>
 
-Usage: git show [commit]  
-This command shows the metadata and content changes of the specified commit.
-``` 
+<h4>10. View a particular commit</h4>
 
-```
-12. git tag
+- `git show commitID`
+- `git show commitHash`
 
-Usage: git tag [commitID]  
-This command is used to give tags to the specified commit.
-```
+<h2></h2>
 
-```
-13. git branch
+<h4>11. View changes before commiting</h4>
 
-Usage: git branch  
-This command lists all the local branches in the current repository.
- 
-Usage: git branch [branch name]  
-This command creates a new branch.
+- Unstaged changes : `git diff`
+- Staged changes : `git diff --staged`
+- Changes of a specific file : `git diff fileName`
 
-Usage: git branch -d [branch name]  
-This command deletes the feature branch.
-```
+<h2></h2>
 
-```
-14. git checkout
+<h4>12. Remove tracked files from the current working tree</h4>
 
-Usage: git checkout [branch name]  
-This command is used to switch from one branch to another.
+- Remove a single file : `git rm fileName` or `git rm directoryName/fileName`
+- Remove files with a particular extension : `git rm *.extensionName` or `git rm directoryName/*.extensionName`
+- Remove file only from VCS : `git rm --cached fileName` or `git rm directoryName/fileName`
 
-Usage: git checkout -b [branch name]  
-This command creates a new branch and also switches to it.
-```
+> <i>Note : First two commands will also remove the files from the local system.</i>
 
-```
-15. git merge
+<h2></h2>
 
-Usage: git merge [branch name]  
-This command merges the specified branch’s history into the current branch.
-```
+<h4>13. Rename files</h4>
 
-```
-16. git remote
+- `git mv oldFileName newFileName`
 
-Usage: git remote add [variable name] [Remote Server Link]  
-This command is used to connect your local repository to the remote server.
-```
+<h2></h2>
 
-```
-17. git push
+<h4>14. Move files</h4>
 
-Usage: git push [variable name] master  
-This command sends the committed changes of master branch to your remote repository.
+- `git mv sourceDirectoryName/fileName destinationDirectoryName`
 
-Usage: git push [variable name] [branch]  
-This command sends the branch commits to your remote repository.
+> <i>Note : Executing the above command will move the source into the destination directory. The source must exists and can be a file, or a directory and the destination must be an existing directory.</i>
 
-Usage: git push –all [variable name]  
-This command pushes all branches to your remote repository.
+<h2></h2>
 
-Usage: git push [variable name] :[branch name]  
-This command deletes a branch on your remote repository.
-```
+<h4>15. Revert unstaged changes staged changes</h4>
 
+- Restore a unstaged working tree files : `git checkout fileName`
+- Restore a staged working tree file : `git reset HEAD fileName`
+- Restore all staged files : `git reset HEAD`
 
-```
-18. git fetch
+<h2></h2>
 
-Usage: git fetch [remote]  
-Fetch all of the branches from the repository & downloads all of the required commits and files from the other repository.
+<h4>16. Amend the most recent commit</h4>
 
-Usage: git fetch [remote] [branch] 
-Fetch the specified branch from the repository.
+- Update the most recent commit : `git commit --amend -m "Updated message for the most recent commit."`
+- Commit more files to most recent commit : `git add fileName` then `git commit --amend --no-edit"`
 
-Usage: git fetch --all
-usage: git fetch --all --prune
-
-Fetches all registered remotes and all their branches.
-```
-
-```
-19. git pull
-
-Usage: git pull [Repository Link]  
-This command fetches and merges changes on the remote server to your working directory.
-```
-
-```
-20. git stash
-
-Usage: git stash save  
-This command temporarily stores all the modified tracked files.
-
-Usage: git stash pop  
-This command restores the most recently stashed files.
-
-Usage: git stash list  
-This command lists all stashed changesets.
-
-Usage: git stash drop  
-This command discards the most recently stashed changeset.
-``` 
-
-```
-21. git reset
-
-usage: git reset [file]
-Remove the specified file from the staging area, but leave the working directory unchanged.
-
-usage: git reset
-Reset the staging area to match the most recent commit, but leave the working directory unchanged.
-
-usage: git reset [remote/branch]
-Reset the working directory exactly the same as remote/branch.
-
-usage: git reset --hard
-Reset the staging area and the working directory to match the most recent commit.
-```
-
-</h5><hr>
+<h2></h2>
