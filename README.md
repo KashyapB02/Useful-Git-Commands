@@ -110,6 +110,123 @@
 <h4>16. Amend the most recent commit</h4>
 
 - Update the most recent commit : `git commit --amend -m "Updated message for the most recent commit."`
-- Commit more files to most recent commit : `git add fileName` then `git commit --amend --no-edit"`
+- Commit more files to most recent commit : `git add fileName` then `git commit --amend --no-edit`
+
+<h2></h2>
+
+<h4>17. Rollback last commit</h4>
+
+- `git revert HEAD`
+
+<h2></h2>
+
+<h4>18. Rollback a particular commit</h4>
+
+- `git revert commitID`
+- `git revert commitHash`
+
+<h2></h2>
+
+<h4>19. Creat and switch to a new branch</h4>
+
+- Only create a new branch : `git branch newbranchName`
+- Create and switch to a new branch : `git branch -b newBrachName`
+
+<h2></h2>
+
+<h4>20. View list of all branches</h4>
+
+- List all branch : `git branch`
+- List all remote branches : `git branch -a`
+
+<h2></h2>
+
+<h4>21. Delete branch</h4>
+
+- Normally delete a branch : `git branch -d branchName`
+- Forcibly delete a branch : `git branch -D branchName`
+- Delete a remote branch : `git push origin --delete branchName`
+
+<h2></h2>
+
+<h4>22. Merge two branches</h4>
+
+- Normally merge a branch : `git merge -d branchName`
+- Merge a branch with a merge commit : `git merge --no-ff branchName`
+
+<h2></h2>
+
+<h4>23. Show commit log as graph for current or all branches</h4>
+
+- Commit log of current branch : `git log --graph --oneline --decorate`
+- Commit log of all branches : `git log --all --graph --oneline --decorate`
+
+> <i>Note : The `--graph` option will draw an ASCII graph, which represents the branch structure of the commit history. When it used in association with the `--oneline` and
+> `--decorate` flags, it makes it easier to identify which commit belongs to which branch.</i>
+
+<h2></h2>
+
+<h4>24. Abort a conflicting merge</h4>
+
+- `git merge --abort`
+
+<h2></h2>
+
+<h4>25. Add a remote repository</h4>
+
+- Origin repositories : `git remote add origin URLofRepository`
+- Upstream repositories : `git remote add upstream URLofRepository`
+
+<h2></h2>
+
+<h4>26. View remote URLs</h4>
+
+- `git remote -v`
+
+<h2></h2>
+
+<h4>27. Get additional information about a remote repository</h4>
+
+- Origin repositories : `git remote show origin`
+- Upstream repositories : `git remote show upstream`
+
+<h2></h2>
+
+<h4>28. Push changes to a remote repository</h4>
+
+- `git push origin branchNametobePushed`
+
+<h2></h2>
+
+<h4>29. Pull changes from a remote repository</h4>
+
+- `git pull`
+- `git pull --verbose`
+
+<h2></h2>
+
+<h4>30. Merge remote repository with local repository</h4>
+
+- `git merge origin`
+
+<h2></h2>
+
+<h4>31. Push a new branch to remote repository</h4>
+
+- `git push -u origin newBranchName`
+
+<h2></h2>
+
+<h4>32. Remove a remote branch</h4>
+
+- `git push --delete origin branchName`
+
+<h2></h2>
+
+<h4>33. Use rebase</h4>
+
+- `git rebase branchName`
+
+> <i>Note : The above command will change the base of your branch from one commit to another, which will make it appear as if you have created your branch from a different commit.</i>
 
 <h2></h2>
