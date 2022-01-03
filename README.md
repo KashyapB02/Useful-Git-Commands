@@ -127,21 +127,28 @@
 
 <h2></h2>
 
-<h4>19. Creat and switch to a new branch</h4>
+<h4>19. Undo all the commits</h4>
+
+- Undo but preserve the changes locally : `git reset commitID` or `git reset commitHash`
+- Discard all the history and changes back to the specific commit : `git reset --hard commitID` or `git reset --hard commitHash`
+
+<h2></h2>
+
+<h4>20. Creat and switch to a new branch</h4>
 
 - Only create a new branch : `git branch newbranchName`
 - Create and switch to a new branch : `git branch -b newBrachName`
 
 <h2></h2>
 
-<h4>20. View list of all branches</h4>
+<h4>21. View list of all branches</h4>
 
 - List all branch : `git branch`
 - List all remote branches : `git branch -a`
 
 <h2></h2>
 
-<h4>21. Delete branch</h4>
+<h4>22. Delete branch</h4>
 
 - Normally delete a branch : `git branch -d branchName`
 - Forcibly delete a branch : `git branch -D branchName`
@@ -149,14 +156,14 @@
 
 <h2></h2>
 
-<h4>22. Merge two branches</h4>
+<h4>23. Merge two branches</h4>
 
 - Normally merge a branch : `git merge -d branchName`
 - Merge a branch with a merge commit : `git merge --no-ff branchName`
 
 <h2></h2>
 
-<h4>23. Show commit log as graph for current or all branches</h4>
+<h4>24. Show commit log as graph for current or all branches</h4>
 
 - Commit log of current branch : `git log --graph --oneline --decorate`
 - Commit log of all branches : `git log --all --graph --oneline --decorate`
@@ -166,67 +173,105 @@
 
 <h2></h2>
 
-<h4>24. Abort a conflicting merge</h4>
+<h4>25. Abort a conflicting merge</h4>
 
 - `git merge --abort`
 
 <h2></h2>
 
-<h4>25. Add a remote repository</h4>
+<h4>26. Add a remote repository</h4>
 
 - Origin repositories : `git remote add origin URLofRepository`
 - Upstream repositories : `git remote add upstream URLofRepository`
 
 <h2></h2>
 
-<h4>26. View remote URLs</h4>
+<h4>27. View remote URLs</h4>
 
 - `git remote -v`
 
 <h2></h2>
 
-<h4>27. Get additional information about a remote repository</h4>
+<h4>28. Get additional information about a remote repository</h4>
 
 - Origin repositories : `git remote show origin`
 - Upstream repositories : `git remote show upstream`
 
 <h2></h2>
 
-<h4>28. Push changes to a remote repository</h4>
+<h4>29. Push changes to a remote repository</h4>
 
 - `git push origin branchNametobePushed`
 
 <h2></h2>
 
-<h4>29. Pull changes from a remote repository</h4>
+<h4>30. Pull changes from a remote repository</h4>
 
 - `git pull`
 - `git pull --verbose`
 
 <h2></h2>
 
-<h4>30. Merge remote repository with local repository</h4>
+<h4>31. Merge remote repository with local repository</h4>
 
 - `git merge origin`
 
 <h2></h2>
 
-<h4>31. Push a new branch to remote repository</h4>
+<h4>32. Push a new branch to remote repository</h4>
 
 - `git push -u origin newBranchName`
 
 <h2></h2>
 
-<h4>32. Remove a remote branch</h4>
+<h4>33. Remove a remote branch</h4>
 
 - `git push --delete origin branchName`
 
 <h2></h2>
 
-<h4>33. Use rebase</h4>
+<h4>34. Use rebase</h4>
 
 - `git rebase branchName`
 
 > <i>Note : The above command will change the base of your branch from one commit to another, which will make it appear as if you have created your branch from a different commit.</i>
+
+<h2></h2>
+
+<h4>35. List all the ignored files within the project</h4>
+
+- `git ls-files --others --ignored --exclude-standard`
+
+<h2></h2>
+
+<h4>36. Temporarily store all the modified tracked files</h4>
+
+- `git stash`
+
+<h2></h2>
+
+<h4>37. Restore the most recently stashed file</h4>
+
+- `git stash pop`
+
+<h2></h2>
+
+<h4>38. List all the stashed changesets</h4>
+
+- `git stash list`
+
+<h2></h2>
+
+<h4>39. Discard the most recently stashed changeset</h4>
+
+- `git stash drop`
+
+<h2></h2>
+
+<h4>40. Remove untracked files</h4>
+
+- Remove untracked files : `git clean -f`
+- Remove untracked files/directories : `git clean -fd`
+- List all files/directories that would be removed : `git clean -nfd`
 
 <h2></h2>
