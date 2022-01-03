@@ -72,6 +72,7 @@
 - Unstaged changes : `git diff`
 - Staged changes : `git diff --staged`
 - Changes of a specific file : `git diff fileName`
+- Differences between two commit ids : `git diff commitId1 commitID2`
 
 <h2></h2>
 
@@ -273,5 +274,11 @@
 - Remove untracked files : `git clean -f`
 - Remove untracked files/directories : `git clean -fd`
 - List all files/directories that would be removed : `git clean -nfd`
+
+<h2></h2>
+
+<h4>41. Listing the dates and the author of the changed file</h4>
+
+- `git blame fileName`
 
 <h2></h2>
