@@ -138,7 +138,7 @@
 <h4>20. Creat and switch to a new branch</h4>
 
 - Only create a new branch : `git branch newbranchName`
-- Create and switch to a new branch : `git branch -b newBrachName`
+- Create and switch to a new branch : `git checkout -b newBrachName`
 
 <h2></h2>
 
